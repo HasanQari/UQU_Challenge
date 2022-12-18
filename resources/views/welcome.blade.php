@@ -463,13 +463,7 @@
                 <div class="text-center text-sm text-gray-500">
                     <div class="flex items-center text-center justify-center ">
 
-                        <a href="#" class="ml-3 underline">
-                            HasanQari:LinkedIn
-                        </a>
-
-                        <a href="https://github.com/HasanQari" class="ml-3 underline">
-                            HasanQari:GitHub
-                        </a>
+                       
 
                         @if (Route::has('login'))
                             <div class="hidden sm:block">
