@@ -463,13 +463,13 @@
                 <div class="text-center text-sm text-gray-500">
                     <div class="flex items-center text-center justify-center ">
 
-                       
+
 
                         @if (Route::has('login'))
                             <div class="hidden sm:block">
                                 @auth
                                     <a href="{{ url('/dashboard') }}"
-                                        class="text-sm text-gray-700 = underline">Dashboard</a>
+                                        class="text-sm text-gray-700 = underline">Real estste owner Dashboard</a>
                                 @else
                                     <a href="{{ route('login') }}" class=" ml-3 text-sm text-gray-700 -500 underline">Log in
                                         for Admin</a>

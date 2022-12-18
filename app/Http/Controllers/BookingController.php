@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
-use App\Models\Admin;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-class AdminController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $real_estate = Admin::all();
-        return view('dashboard')->with(['real_estate'=>$real_estate]);
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $real_estate = Admin::all();
-        return view('booking',compact('real_estate'));
+        //
     }
 
     /**
@@ -38,18 +35,16 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        Admin::create($input);
-        return redirect()->back()->with('flash_message','تمت الاضافة بنجاح');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Booking $booking)
     {
         //
     }
@@ -57,10 +52,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
         //
     }
@@ -69,10 +64,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Booking $booking)
     {
         //
     }
@@ -80,10 +75,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $booking)
     {
         //
     }

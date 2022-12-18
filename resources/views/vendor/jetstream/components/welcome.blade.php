@@ -7,23 +7,23 @@
  <div class="grid gap-4 grid-cols-2">
     <h1 class="m-5 mb-0">اضافة عقار جديد</h1><br>
      <div class="border h-64 flex justify-center py-2">
-         <form action="{{ url('dashboard') }}" method="get" class="">
+         <form action="{{ route('estate.store') }}" method="post" class="">
              {!! csrf_field() !!}
-             <input id="res-name" type="text" name="res-name" placeholder="اكتب اسم العقار" class="">
-             <select name="res-type" id="res-type" class="px-10 py-2 rounded-full m-3">
+             <input id="name" type="text" name="name" placeholder="اكتب اسم العقار" class="">
+             <select name="type" id="type" class="px-10 py-2 rounded-full m-3">
                  <option value="1">استراحة</option>
                  <option value="2">جلسة</option>
              </select><br>
-             <input id="res-descrip" type="text" name="res-descrip" placeholder="قم بوصف العقار" class="">
-             <select name="res-location" id="res-location" class="px-10 py-2 rounded-full m-3">
+             <input id="descrip" type="text" name="descrip" placeholder="قم بوصف العقار" class="">
+             <select name="location" id="location" class="px-10 py-2 rounded-full m-3">
                  <option value="makkah">مكة</option>
                  <option value="jeddah">جدة</option>
                  <option value="taif">الطائف</option>
                  <option value="madina">المدينة</option>
                  <option value="abha">أبها</option>
              </select><br>
-             <input id="res-p-night" type="number" name="res-p-night" placeholder="السعر بالليلة" class=""><br>
-             <input id="res-p-hour" type="number" name="res-p-hour" placeholder="السعر بالساعة" class="">
+             <input id="p-night" type="number" name="price_night" placeholder="السعر بالليلة" class=""><br>
+             <input id="p-hour" type="number" name="price_hour" placeholder="السعر بالساعة" class="">
              <input type="submit" value="اضافة" class="btn btn-success border border-lime-400 hover:bg-lime-400 rounded-full m-3 px-11 py-2">
          </form>
      </div>
@@ -46,6 +46,7 @@
                  </tr>
              </thead>
              <tbody>
+                @foreach($real_estate as $e)
                 <tr class="grid grid-cols-7 border">
                     <td class="border border-black">123456</td>
                     <td class="border border-black">استراحة النجمة</td>
@@ -55,6 +56,7 @@
                     <td class="border border-black">132</td>
                     <td class="border border-black">تفاصيل</td>
                 </tr>
+                @endforeach
              </tbody>
          </table>
      </div>

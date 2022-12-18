@@ -14,19 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+Route::get('/booking',  [AdminController::class,'create']);
+
+Route::get('/dashboard', [AdminController::class,'index'])->name('dashboard');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
 });
 
-
+// Route::post('dashboard',[AdminController::class,'store'])->name('estate.store');
+Route::post('estate',[AdminController::class,'store'])->name('estate.store');
 Route::resource("/view.dashboard", AdminController::class);
